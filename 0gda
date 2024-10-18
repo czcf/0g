@@ -1,0 +1,40 @@
+```jsx
+sudo apt-get update && sudo apt-get install clang cmake build-essential pkg-config libssl-dev protobuf-compiler llvm llvm-dev
+```
+
+```jsx
+cd $HOME && \
+ver="1.22.0" && \
+wget "https://golang.org/dl/go$ver.linux-amd64.tar.gz" && \
+sudo rm -rf /usr/local/go && \
+sudo tar -C /usr/local -xzf "go$ver.linux-amd64.tar.gz" && \
+rm "go$ver.linux-amd64.tar.gz" && \
+echo "export PATH=$PATH:/usr/local/go/bin:$HOME/go/bin" >> ~/.bash_profile && \
+source ~/.bash_profile && \
+go version
+```
+
+```jsx
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustc --version
+```
+
+```jsx
+git clone -b v1.1.3 https://github.com/0glabs/0g-da-node.git
+```
+
+1. Update
+
+```jsx
+cd $HOME/0g-da-node
+git stash
+git fetch --all --tags
+git checkout 8514e32 
+git submodule update --init
+cargo build --release
+```
+
+```jsx
+./dev_support/download_params.sh
+```
