@@ -1,0 +1,6 @@
+cd $HOME/0g-da-node
+git stash
+git fetch --all --tags
+git checkout 8514e32 
+git submodule update --init
+cargo build --release
